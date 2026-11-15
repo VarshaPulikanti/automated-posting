@@ -1,0 +1,10 @@
+"""Credentials are read from environment variables (never hard-coded)."""
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+def env(name: str, default: str = "") -> str:
+    return os.getenv(name, default).strip()
